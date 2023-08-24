@@ -16,4 +16,5 @@ type Query {
 
 type Mutation {
   addUser(input: addUserInput!): User
+  deleteUser(id: Int!): User
 }

@@ -4,4 +4,5 @@ export interface UserRepository {
     getUser(id: number): Promise<User>;
     getUsers(): Promise<User[]>;
     addUser(name: string, description?: string | null): Promise<User>;
+    deleteUser(id: number): Promise<User>;
 }

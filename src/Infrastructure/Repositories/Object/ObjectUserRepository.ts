@@ -36,4 +36,19 @@ export class ObjectUserRepository implements UserRepository{
 
         return user;
     }
+
+    public async deleteUser(id: number) {
+        const user = await this.getUser(id);
+
+        for (let i = 0; i < this.users.length; i++) {
+            if (this.users[i].id === id) {
+                this.users.splice(i, 1);
+                break;
+            }
+        }
+
+        this.users.sort((a, b) => (a.id > b.id) ? 1 : -1);
+
+        return user;
+    }
 }
